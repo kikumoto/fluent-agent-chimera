@@ -1,0 +1,8 @@
+.*
+!.gitignore
+!.travis.yml
+/vendor
+/dist
+/fluent-agent-chimera
+
+

@@ -1,0 +1,30 @@
+
+[[constraint]]
+  name = "github.com/lestrrat/go-fluent-client"
+
+[[constraint]]
+  name = "github.com/lestrrat/go-msgpack"
+
+[[constraint]]
+  name = "github.com/lestrrat/go-pdebug"
+
+[[constraint]]
+  name = "github.com/pkg/errors"
+
+[[constraint]]
+  name = "github.com/stretchr/testify"
+
+[[constraint]]
+  name = "github.com/BurntSushi/toml"
+
+[[constraint]]
+  name = "github.com/hashicorp/logutils"
+
+[[constraint]]
+  name = "github.com/fukata/golang-stats-api-handler"
+
+[[constraint]]
+  name = "github.com/mattn/go-scan"
+
+[[constraint]]
+  name = "github.com/fsnotify/fsnotify"

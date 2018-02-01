@@ -1,0 +1,33 @@
+# global settings
+TagPrefix = "nginx"              # "nginx.access", "nginx.error"
+FieldName = "message"            # default "message"
+ReadBufferSize = 1048576         # default 64KB.
+SubSecondTime = true             # default false. for Fluentd 0.14 or later only
+# FilenameFieldName = "filepath" # default filepath
+# HostFieldName = "hostname"     # default hostname
+# HostFieldValue = "xxxx"        # default values got from "hostname" command
+# LogLevel = "warn"                #default info
+
+[Server]
+# fluentd server info
+#   chimera uses https://github.com/lestrrat/go-fluent-client.
+Network = "tcp"                  # "unix" for unix domain socket
+Address = "127.0.0.1:24224"      # filename when Network = "unix"
+
+[[Logs]]
+Tag = "batch"
+Basedir = "/path/to/batchdir"
+Recursive = true                 # default false
+TargetFileRegexp = "^.+/sample_dir/.*(\\d{8})(?:.*\\.log)?$"
+FileTimeFormat = "20060102"
+
+[[Logs]]
+Tag = "test"
+Basedir = "/path/to/hoge_dir"
+Recursive = false # default false
+TargetFileRegexp = "^.+/sample_dir/.*(\\d{4}-\\d{2}-\\d{2})(?:.*\\.log)?$"
+FileTimeFormat = "2006-01-02"
+
+[Monitor]
+Host = "localhost"
+Port = 24223

@@ -1,0 +1,30 @@
+# global settings
+TagPrefix = "web"         # "web.access", "web.error"
+ReadBufferSize = 1024     # default 64KB.
+SubSecondTime = true      # default false. for Fluentd 0.14 or later only
+# PathFieldName = "path" # default path
+# HostFieldName = "host" # default host
+# Host = "xxxx" # default values got from "hostname" command
+
+
+[Server]
+Address = "127.0.0.1:24225"
+
+[[Logs]]
+Tag = "app1.batch"
+Basedir = "/var/log/app1/batch"
+Recursive = true
+TargetFileRegexp = "^.+/batch/.*(\\d{8})(?:.*\\.log)?$"
+FileTimeFormat = "20060102"
+
+[[Logs]]
+Tag = "app2.weblog"
+Basedir = "/var/log/app2/weblog"
+Recursive = false          # default true
+TargetFileRegexp = "^.+/weblog/.*(\\d{4}/\\d{2}/\\d{2})(?:.*\\.log)?$"
+FileTimeFormat = "2006/01/02"
+FieldName = "msg"
+PathFieldName = "file" # default filepath
+HostFieldName = "server" # default hostname
+Host = "thishost" # default values got from "hostname" command
+
