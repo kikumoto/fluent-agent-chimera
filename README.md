@@ -45,8 +45,8 @@ ReadBufferSize = 1048576         # default 64KB.
 SubSecondTime = true             # default false. for Fluentd 0.14 or later only
 # FilenameFieldName = "filepath" # default filepath
 # HostFieldName = "hostname"     # default hostname
-# HostFieldValue = "xxxx"        # default values got from "hostname" command
-# LogLevel = "warn"                #default info
+# Host = "xxxx"                  # default values got from "hostname" command
+# LogLevel = "warn"              # default info
 
 [Server]
 # fluentd server info
